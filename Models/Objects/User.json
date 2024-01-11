@@ -1,0 +1,14 @@
+{
+    "ID": "",
+    "Name": "",
+    "Credentials": {
+        "EmailAddress": "",
+        "Username": "",
+        "Password": "",
+        "AuthToken": ""
+    },
+    "Activity": {
+        "CreatedAt": "",
+        "Logs": []
+    }
+}
