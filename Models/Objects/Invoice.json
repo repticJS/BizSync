@@ -1,0 +1,21 @@
+{
+    "ID": "",
+    "Company": "",
+    "Client": "",
+    "Items": [],
+    "Date": {
+        "Due": "",
+        "Issued": ""
+    },
+    "Vat": {
+        "Name": "",
+        "Rate": 0
+    },
+    "Status": {
+        "Type": "",
+        "Amount": ""
+    },
+    "Styling": {
+        "backgroundColor": ""
+    }
+}
