@@ -5,21 +5,24 @@ const Schema = new mongoose.Schema({
     ID: {
         type: String
     },
+    Name: {
+        type: String
+    },
+    Logo: {
+        type: String
+    },
     Company: {
         type: String
     },
-    User: {
-        type: String
+    ContactDetails: {
+        type: Object
     },
-    InvitedBy: {
-        type: String
-    },
-    ExpireDate: {
-        type: String
+    Invoices: {
+        type: Array
     }
 
 })
 
-const model = new mongoose.model('Invite', Schema);
+const model = new mongoose.model('Client', Schema);
 
 module.exports = model;
