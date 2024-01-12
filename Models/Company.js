@@ -19,6 +19,9 @@ const Schema = new mongoose.Schema({
     },
     Clients: {
         type: Array
+    },
+    PaymentMethods: {
+        type: Array
     }
 
 })
