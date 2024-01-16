@@ -28,7 +28,7 @@ const App = () => {
         }
            
         try {
-            const { data } = await axios.post('http://localhost:3001/login', Requestdata);
+            const { data } = await axios.post('http://localhost:3001/AccountManagement/Login', Requestdata);
             setUserData(data.User)
             setCompanies(data.Companies)
             return data.User

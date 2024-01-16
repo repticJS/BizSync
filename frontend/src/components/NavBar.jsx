@@ -1,18 +1,26 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Fade, FormControl, InputLabel, LinearProgress, MenuItem, Select, Slide, Stack, TextField, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { Dashboard, Headset, ExpandMore, People, Description } from '@mui/icons-material';
+import { Dashboard, Headset, ExpandMore, People, Description, Category, Settings, AccountBalanceWallet } from '@mui/icons-material';
 import { useLocation } from 'react-router-dom';
 
 const CompanyOptions = [
     {
-        Name: 'Dashboard',
-        Icon: <Dashboard sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
-        Route: '/dashboard'
+      Name: 'Dashboard',
+      Icon: <Dashboard sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
+      Route: '/dashboard',
+      Status: true
     },
     {
-        Name: 'Staff',
-        Icon: <People sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
-        Route: '/Staff'
+      Name: 'Settings',
+      Icon: <Settings sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
+      Route: '/Settings',
+      Status: true
+    },
+    {
+      Name: 'Staff',
+      Icon: <People sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
+      Route: '/Staff',
+      Status: true
     }
 ]
 
@@ -20,13 +28,30 @@ const ClientOptions = [
     {
         Name: 'Clients',
         Icon: <Headset sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
-        Route: '/Clients'
+        Route: '/Clients',
+        Status: true
     },
     {
-        Name: 'Invoices',
-        Icon: <Description sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
-        Route: '/Invoices'
-    }
+      Name: 'Products ',
+      Icon: <Category sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
+      Route: '/Products',
+      Status: true
+  },
+]
+
+const CreateOptions = [
+    {
+      Name: 'Invoices',
+      Icon: <Description sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
+      Route: '/Invoices',
+      Status: true
+    },
+    {
+      Name: 'Expenses',
+      Icon: <AccountBalanceWallet sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}/>,
+      Route: '/Expenses',
+      Status: true
+  }
 ]
 
 
@@ -68,19 +93,37 @@ const NavBar = ({ setCompany, Company, Companies }) => {
     
     <Stack sx={{ borderBottom: '1px solid black'}}>
     {CompanyOptions.map((item, index) => (
-        <Box sx={{ width: '300px', height: '50px', ":hover": { backgroundColor: '#CAC9C9', borderRadius: '', cursor: 'pointer'}, backgroundColor: `${path === item.Route ? '#CAC9C9' : ''}`}}>
-        <Stack direction="row" sx={{ height: '50px', width: '300px', backgroundColor: '', display: 'flex', alignItems: 'center', paddingLeft: '20px'}} gap={2}>
-        {item.Icon} <Typography sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}>{item.Name}</Typography>
-        </Stack>
+        <Box>
+          {item.Status === true &&
+          <Box sx={{ width: '300px', height: '50px', ":hover": { backgroundColor: '#CAC9C9', borderRadius: '', cursor: 'pointer'}, backgroundColor: `${path === item.Route ? '#CAC9C9' : ''}`}}>
+          <Stack direction="row" sx={{ height: '50px', width: '300px', backgroundColor: '', display: 'flex', alignItems: 'center', paddingLeft: '20px'}} gap={2}>
+          {item.Icon} <Typography sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}>{item.Name}</Typography>
+          </Stack>
+          </Box>}
+        </Box>
+    ))}
+    </Stack>
+    <Stack sx={{ borderBottom: '1px solid black'}}>
+    {ClientOptions.map((item, index) => (
+        <Box>
+          {item.Status === true &&
+          <Box sx={{ width: '300px', height: '50px', ":hover": { backgroundColor: '#CAC9C9', borderRadius: '', cursor: 'pointer'}, backgroundColor: `${path === item.Route ? '#CAC9C9' : ''}`}}>
+          <Stack direction="row" sx={{ height: '50px', width: '300px', backgroundColor: '', display: 'flex', alignItems: 'center', paddingLeft: '20px'}} gap={2}>
+          {item.Icon} <Typography sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}>{item.Name}</Typography>
+          </Stack>
+          </Box>}
         </Box>
     ))}
     </Stack>
     <Stack>
-    {ClientOptions.map((item, index) => (
-        <Box sx={{ width: '300px', height: '50px', ":hover": { backgroundColor: '#CAC9C9', borderRadius: '', cursor: 'pointer'}, backgroundColor: `${path === item.Route ? '#CAC9C9' : ''}`}}>
-        <Stack direction="row" sx={{ height: '50px', width: '300px', backgroundColor: '', display: 'flex', alignItems: 'center', paddingLeft: '20px'}} gap={2}>
-        {item.Icon} <Typography sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}>{item.Name}</Typography>
-        </Stack>
+    {CreateOptions.map((item, index) => (
+        <Box>
+          {item.Status === true &&
+          <Box sx={{ width: '300px', height: '50px', ":hover": { backgroundColor: '#CAC9C9', borderRadius: '', cursor: 'pointer'}, backgroundColor: `${path === item.Route ? '#CAC9C9' : ''}`}}>
+          <Stack direction="row" sx={{ height: '50px', width: '300px', backgroundColor: '', display: 'flex', alignItems: 'center', paddingLeft: '20px'}} gap={2}>
+          {item.Icon} <Typography sx={{ fontFamily: 'monospace', fontSize: '20px', color: 'black'}}>{item.Name}</Typography>
+          </Stack>
+          </Box>}
         </Box>
     ))}
     </Stack>

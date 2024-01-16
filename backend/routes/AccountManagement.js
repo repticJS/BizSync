@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const UserSchema = require('../Models/User');
 const CompanySchema = require('../Models/Company');
 
-router.post('/', async(req, res) => {
+router.post('/Login', async(req, res) => {
    
     const { Username, Password } = req.body;
        
@@ -24,7 +24,6 @@ router.post('/', async(req, res) => {
     }
     
 })
-
 async function getUserData(User) {
 
     const CompaniesData = await CompanySchema.find({ Users: User.ID })
