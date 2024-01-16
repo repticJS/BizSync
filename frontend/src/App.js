@@ -11,6 +11,12 @@ const App = () => {
     const [Company, setCompany] = useState({})
     const [Companies, setCompanies] = useState([])
 
+    useEffect(() => {
+
+        console.log(Company)
+
+    }, [Company])
+
     async function ProcessLogin(Username, Password) {
 
         console.log('Username: ' + Username)

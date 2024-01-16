@@ -5,29 +5,6 @@ const mongoose = require('mongoose')
 const UserSchema = require('../Models/User');
 const CompanySchema = require('../Models/Company');
 
-const Users = [
-    {
-        ID: "1000",
-        Name: "Ethan Hale",
-        Credentials: {
-            EmailAddress: "reptic23@gmail.com",
-            Username: "repticJS",
-            Password: "$2b$10$38Sf4IFXU0b8b2f37sr0IeLXrk9hqcRCudTEdw1PwwteyRuNBfuFO",
-            AuthToken: "Hz5NxeIJoFK9krqaeZrPLwmMmgI_XiQiIkQ"
-        },
-        Activity: {
-            CreatedAt: "14/01/2024",
-            Logs: [
-                {
-                    Timestamp: "1705261699599",
-                    Level: "INFO",
-                    Message: "User Created"
-                }
-            ]
-        }
-    }
-]
-
 router.post('/', async(req, res) => {
    
     const { Username, Password } = req.body;
