@@ -1,7 +1,8 @@
 {
     "/AccountManagement": {
-        "/Register": {
-            "Params": ["EmailAddress", "Password"]
+        "/Login": {
+            "Params": ["Username", "Password"],
+            "Description": "This is the main login route, which auths the user into the dashboard"
         }
     }
 }
