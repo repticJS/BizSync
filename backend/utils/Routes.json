@@ -3,6 +3,16 @@
         "/Login": {
             "Params": ["Username", "Password"],
             "Description": "This is the main login route, which auths the user into the dashboard"
+        },
+        "/Password": {
+            "/Change": {
+                "Params": ["AuthToken", "NewPassword"],
+                "Description": "This will change the Users Password"
+            },
+            "/Forgot-Password": {
+                "Params": ["Username"],
+                "Description": "This will create a forgot password File (Coming soon) and send a email to the user."
+            }
         }
     }
 }
