@@ -51,6 +51,7 @@ const App = () => {
     <Loader Loading={Loading} />
         <Routes>
             <Route path="/" exact element={<LoginPage ProcessLogin={ProcessLogin} setLoading={setLoading} />} />
+            <Route path="/dashboard" exact element={<Dashboard setLoading={setLoading} />} />
         </Routes>
         
         {userData.ID && <Box>

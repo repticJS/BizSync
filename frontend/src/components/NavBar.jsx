@@ -68,7 +68,7 @@ const NavBar = ({ setCompany, Company, Companies }) => {
   }, [])
     
   return (
-    <Stack sx={{ width: '300px', height: '100vh', backgroundColor: '#ffffff', position: 'absolute', top: 0, left: 0}}>
+    <Stack sx={{ width: '300px', height: '100vh', backgroundColor: '#ffffff', position: 'fixed', top: 0, left: 0}}>
 
     <Box sx={{ height: '150px', width: '300px', backgroundColor: '', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '5px'}}>
     <img src={Company.Logo} style={{ height: '150px', width: '300px', objectFit: 'contain'}} />
